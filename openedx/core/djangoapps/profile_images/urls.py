@@ -6,7 +6,6 @@ NOTE: These views are deprecated.  These routes are superseded by
 ``/api/user/v1/accounts/{username}/image``, found in
 ``openedx.core.djangoapps.user_api.urls``.
 """
-# pylint: enable=unicode-format-string
 
 
 from django.conf import settings

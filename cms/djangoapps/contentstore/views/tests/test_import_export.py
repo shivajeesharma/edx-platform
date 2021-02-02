@@ -152,7 +152,7 @@ class ImportTestCase(CourseTestCase):
 
         def touch(name):
             """ Equivalent to shell's 'touch'"""
-            with open(name, 'a'):  # lint-amnesty, pylint: disable=W6005, bad-option-value
+            with open(name, 'a'):
                 os.utime(name, None)
 
         # Create tar test files -----------------------------------------------

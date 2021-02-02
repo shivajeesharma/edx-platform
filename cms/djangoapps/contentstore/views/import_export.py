@@ -1,4 +1,4 @@
-"""
+"""  # lint-amnesty, pylint: disable=django-not-configured
 These views handle all actions in Studio related to import and exporting of
 courses
 """
@@ -181,7 +181,7 @@ def _write_chunk(request, courselike_key):
             elif size > int(content_range['stop']) and size == int(content_range['end']):
                 return JsonResponse({'ImportStatus': 1})
 
-        with open(temp_filepath, mode) as temp_file:  # lint-amnesty, pylint: disable=W6005, bad-option-value
+        with open(temp_filepath, mode) as temp_file:
             for chunk in request.FILES['course-data'].chunks():
                 temp_file.write(chunk)
 
@@ -201,7 +201,7 @@ def _write_chunk(request, courselike_key):
             })
 
         log.info(u"Course import %s: Upload complete", courselike_key)
-        with open(temp_filepath, 'rb') as local_file:  # lint-amnesty, pylint: disable=W6005, bad-option-value
+        with open(temp_filepath, 'rb') as local_file:
             django_file = File(local_file)
             storage_path = course_import_export_storage.save(u'olx_import/' + filename, django_file)
         import_olx.delay(

@@ -1,4 +1,4 @@
-import functools
+import functools  # lint-amnesty, pylint: disable=missing-module-docstring
 
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseServerError
 
@@ -19,7 +19,7 @@ def jsonable_error(status=500, message="The Studio servers encountered an error"
         def inner(request, *args, **kwargs):
             if request.is_ajax():
                 content = dump_js_escaped_json({"error": message})
-                return HttpResponse(content, content_type="application/json",
+                return HttpResponse(content, content_type="application/json",  # lint-amnesty, pylint: disable=http-response-with-content-type-json
                                     status=status)
             else:
                 return func(request, *args, **kwargs)
@@ -28,7 +28,7 @@ def jsonable_error(status=500, message="The Studio servers encountered an error"
 
 
 @jsonable_error(404, "Resource not found")
-def not_found(request, exception):
+def not_found(request, exception):  # lint-amnesty, pylint: disable=unused-argument
     return render_to_response('error.html', {'error': '404'})
 
 
@@ -39,7 +39,7 @@ def server_error(request):
 
 @fix_crum_request
 @jsonable_error(404, "Resource not found")
-def render_404(request, exception):
+def render_404(request, exception):  # lint-amnesty, pylint: disable=unused-argument
     return HttpResponseNotFound(render_to_string('404.html', {}, request=request))
 
 

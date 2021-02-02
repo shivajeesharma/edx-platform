@@ -64,8 +64,7 @@ class Command(BaseCommand):
         setup_option = options['setup']
         index_all_courses_option = all_option or setup_option
 
-        if (not len(course_ids) and not index_all_courses_option) or \  # lint-amnesty, pylint: disable=len-as-condition
-                (len(course_ids) and index_all_courses_option):  # lint-amnesty, pylint: disable=len-as-condition
+        if (not len(course_ids) and not index_all_courses_option) or (len(course_ids) and index_all_courses_option):  # lint-amnesty, pylint: disable=len-as-condition
             raise CommandError("reindex_course requires one or more <course_id>s OR the --all or --setup flags.")
 
         store = modulestore()

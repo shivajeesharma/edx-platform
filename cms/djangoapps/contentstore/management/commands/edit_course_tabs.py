@@ -1,4 +1,5 @@
-###  # lint-amnesty, pylint: disable=missing-module-docstring
+# lint-amnesty, pylint: disable=missing-module-docstring
+###
 ### Script for editing the course's tabs
 ###
 

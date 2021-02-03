@@ -1,4 +1,5 @@
-import logging  # lint-amnesty, pylint: disable=missing-module-docstring
+# lint-amnesty, pylint: disable=missing-module-docstring
+import logging
 
 import dateutil
 import six

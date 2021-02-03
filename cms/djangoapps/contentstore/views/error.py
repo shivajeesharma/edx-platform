@@ -1,4 +1,5 @@
-import functools  # lint-amnesty, pylint: disable=missing-module-docstring
+# lint-amnesty, pylint: disable=missing-module-docstring
+import functools
 
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseServerError
 
